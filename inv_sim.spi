@@ -1,0 +1,29 @@
+*** SPICE deck for cell inv_sim{sch} from library Inverter
+*** Created on Wed Jun 02, 2021 19:41:45
+*** Last revised on Wed Jun 02, 2021 19:42:42
+*** Written on Wed Jun 02, 2021 19:43:16 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT Inverter__inv FROM CELL inv{sch}
+.SUBCKT Inverter__inv in out
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 out in gnd gnd NMOS L=0.6U W=3U
+Mpmos@0 vdd in out vdd PMOS L=0.6U W=3U
+.ENDS Inverter__inv
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: inv_sim{sch}
+Xinv@0 in out Inverter__inv
+
+* Spice Code nodes in cell cell 'inv_sim{sch}'
+vdd vdd 0 DC 5
+vin in 0 DC pwl 10n 0 20n 5 50n 5 60n 0
+cload out 0 250fF
+.measure tran tf trig v(out) val=4.5 fall=1 td=8ns targ v(out) val=0.5 fall=1
+.measure tran tf trig v(out) value=0.5 rise=1 td=50ns targ v(out) val=4.5 rise=1
+.tran 0 100ns
+.include C:\Users\ARIJIT\Documents\Electric\C5_models.txt
+.END

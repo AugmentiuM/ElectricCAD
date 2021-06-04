@@ -1,0 +1,29 @@
+Circuit: *** SPICE deck for cell inv{lay} from library Inverter
+
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Direct Newton iteration for .op point succeeded.
+
+Multiply defined .measure result:  tf   
+
+  Each .measure statement needs a unique result name.
+
+Date: Wed Jun 02 21:35:01 2021
+Total elapsed time: 0.116 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2120
+traniter = 2111
+tranpoints = 1054
+accept = 1054
+rejected = 0
+matrix size = 18
+fillins = 8
+solver = Normal
+Matrix Compiler1:      67 opcodes  0.2/[0.1]/0.2
+Matrix Compiler2: off  [0.1]/0.2/0.2
+

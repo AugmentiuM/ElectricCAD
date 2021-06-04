@@ -1,0 +1,29 @@
+*** SPICE deck for cell nand_sim{sch} from library NAND
+*** Created on Thu Jun 03, 2021 12:09:15
+*** Last revised on Thu Jun 03, 2021 12:25:33
+*** Written on Thu Jun 03, 2021 12:27:44 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT NAND__nand FROM CELL NAND:nand{sch}
+.SUBCKT NAND__nand A B out
+** GLOBAL gnd
+** GLOBAL vdd
+MNMOS out A net@6 gnd N L=0.6U W=3U
+MNMOS2 net@6 B gnd gnd N L=0.6U W=3U
+MPMOS vdd A out vdd P L=0.6U W=3U
+MPMOS2 vdd B out vdd P L=0.6U W=3U
+.ENDS NAND__nand
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: NAND:nand_sim{sch}
+Xnand@0 A B out NAND__nand
+
+* Spice Code nodes in cell cell 'NAND:nand_sim{sch}'
+vdd vdd 0 DC 5
+A vin 0 DC 0
+B vin 0 DC 5
+.dc vin 0 5 1m
+.include C:\Users\ARIJIT\Documents\Electric\C5_models.txt
+.END

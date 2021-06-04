@@ -1,0 +1,95 @@
+# header information:
+HInverter|9.07
+
+# Views:
+Vicon|ic
+Vlayout|lay
+Vschematic|sch
+
+# Technologies:
+Tmocmos|ScaleFORmocmos()D300.0|mocmosAnalog()BT|mocmosNumberOfMetalLayers()I3
+
+# Cell inv;1{ic}
+Cinv;1{ic}||artwork|1622642750555|1622642996635|E
+Ngeneric:Facet-Center|art@0||0|0||||AV
+NTriangle|art@2||0|1|6|6|RRR|
+NCircle|art@3||3.5|1|1|1||
+Nschematic:Bus_Pin|pin@0||-5|1||||
+Nschematic:Wire_Pin|pin@1||-3|1||||
+Nschematic:Bus_Pin|pin@2||3.5|1||||
+Nschematic:Wire_Pin|pin@5||7|1||||
+Aschematic:wire|net@0|||0|pin@1||-3|1|pin@0||-5|1
+Aschematic:wire|net@3|||1800|pin@2||3.5|1|pin@5||7|1
+Ein||D5G2;|pin@0||U
+Eout||D5G2;X4;|pin@2||U
+X
+
+# Cell inv;1{lay}
+Cinv;1{lay}||mocmos|1622563913188|1622650890847||DRC_last_good_drc_area_date()G1622565125149|DRC_last_good_drc_bit()I18|DRC_last_good_drc_date()G1622650898256
+Ngeneric:Facet-Center|art@0||0|0||||AV
+NMetal-1-P-Active-Con|contact@0||-71.5|16||5||
+NMetal-1-P-Active-Con|contact@1||-62.5|16||5||
+NMetal-1-N-Active-Con|contact@2||-71.5|-12||5||
+NMetal-1-N-Active-Con|contact@3||-62.5|-12||5||
+NMetal-1-Polysilicon-1-Con|contact@5||-81.5|3||||
+NN-Transistor|nmos@1||-67|-12|7||RRR||SIM_spice_model(D5G1;)SNMOS
+NMetal-1-Pin|pin@2||-62.5|2||||
+NMetal-1-Pin|pin@12||-46|2||||
+Ngeneric:Invisible-Pin|pin@14||-84|-24|||||SIM_spice_card(D5G1;)S[vdd vdd 0 DC 5,vin in 0 DC pwl 10n 0 20n 5 50n 5 60n 0,cload out 0 250fF,.measure tran tf trig v(out) val=4.5 fall=1 td=8ns targ v(out) val=0.5 fall=1,.measure tran tf trig v(out) value=0.5 rise=1 td=50ns targ v(out) val=4.5 rise=1,.tran 0 100ns,".include C:\\Users\\ARIJIT\\Documents\\Electric\\C5_models.txt"]
+NPolysilicon-1-Pin|pin@15||-67|3||||
+NP-Transistor|pmos@0||-67|16|7||RRR||SIM_spice_model(D5G1;)SPMOS
+NMetal-1-P-Well-Con|substr@0||-65.5|-27|20|||
+NMetal-1-N-Well-Con|well@0||-65.5|30|20|1||
+AP-Active|net@0|||S1800|pmos@0|diff-top|-63.25|16|contact@1||-62.5|16
+AP-Active|net@1|||S0|pmos@0|diff-bottom|-71|16|contact@0||-71|16
+AN-Active|net@2|||S1800|nmos@1|diff-top|-63|-12|contact@3||-63|-12
+AN-Active|net@3|||S0|nmos@1|diff-bottom|-70.75|-12|contact@2||-71.5|-12
+AMetal-1|net@7||1|S900|well@0||-71.5|30|contact@0||-71.5|16
+AMetal-1|net@8||1|S900|contact@2||-71.5|-12|substr@0||-71.5|-27
+AMetal-1|net@13||1|S900|contact@1||-62.5|16|pin@2||-62.5|2
+AMetal-1|net@14||1|S900|pin@2||-62.5|2|contact@3||-62.5|-12
+AMetal-1|net@24||1|S1800|pin@2||-62.5|2|pin@12||-46|2
+APolysilicon-1|net@42|||S900|pmos@0|poly-right|-67|9|pin@15||-67|3
+APolysilicon-1|net@43|||S900|pin@15||-67|3|nmos@1|poly-left|-67|-5
+APolysilicon-1|net@44|||S0|pin@15||-67|3|contact@5||-81.5|3
+Egnd||D5G2;|substr@0||U
+Ein||D5G2;|contact@5||U
+Eout||D5G2;X-1;|pin@12||U
+Evdd||D5G2;|well@0||U
+X
+
+# Cell inv;1{sch}
+Cinv;1{sch}||schematic|1622560793216|1622643188355|
+Ngeneric:Facet-Center|art@0||0|0||||AV
+NOff-Page|conn@0||-10|-1||||
+NOff-Page|conn@1||11|-1||||
+NGround|gnd@0||1|-15||||
+Iinv;1{ic}|inv@0||18|17|||D5G4;
+NTransistor|nmos@0||-1|-5|||R||ATTR_length(D5G0.5;X-0.5;Y-1;)D2.0|ATTR_width(D5G1;X0.5;Y-1;)D10.0|SIM_spice_model(D5G1;X-1;Y2;)SNMOS
+NWire_Pin|pin@0||-2|-1||||
+NWire_Pin|pin@1||1|-1||||
+NTransistor|pmos@0||-1|5|||R|2|ATTR_length(D5G0.5;X-0.5;Y-1;)D2.0|ATTR_width(D5G1;X0.5;Y-1;)D10.0|SIM_spice_model(D5G1;X1;Y2;)SPMOS
+NPower|pwr@0||1|10||||
+Awire|net@0|||900|pwr@0||1|10|pmos@0|d|1|7
+Awire|net@2|||900|nmos@0|s|1|-7|gnd@0||1|-13
+Awire|net@4|||900|pmos@0|g|-2|5|pin@0||-2|-1
+Awire|net@5|||900|pin@0||-2|-1|nmos@0|g|-2|-5
+Awire|net@6|||1800|conn@0|y|-8|-1|pin@0||-2|-1
+Awire|net@7|||900|pmos@0|s|1|3|pin@1||1|-1
+Awire|net@8|||900|pin@1||1|-1|nmos@0|d|1|-3
+Awire|net@9|||1800|pin@1||1|-1|conn@1|a|9|-1
+Ein||D5G2;|conn@0|a|U
+Eout||D5G2;|conn@1|a|U
+X
+
+# Cell inv_sim;1{sch}
+Cinv_sim;1{sch}||schematic|1622643105021|1622643162404|
+Ngeneric:Facet-Center|art@0||0|0||||AV
+Iinv;1{ic}|inv@0||-2|-1|||D5G4;
+Ngeneric:Invisible-Pin|pin@0||0|-8|||||SIM_spice_card(D5G1;)S[vdd vdd 0 DC 5,vin in 0 DC pwl 10n 0 20n 5 50n 5 60n 0,cload out 0 250fF,.measure tran tf trig v(out) val=4.5 fall=1 td=8ns targ v(out) val=0.5 fall=1,.measure tran tf trig v(out) value=0.5 rise=1 td=50ns targ v(out) val=4.5 rise=1,.tran 0 100ns,".include C:\\Users\\ARIJIT\\Documents\\Electric\\C5_models.txt"]
+NWire_Pin|pin@1||-16|0||||
+NWire_Pin|pin@2||16|0||||
+Awire|in|D5G1;||0|inv@0|in|-7|0|pin@1||-16|0
+Awire|net@2||||pin@2||16|0|pin@2||16|0
+Awire|out|D5G1;||1800|inv@0|out|1.5|0|pin@2||16|0
+X
