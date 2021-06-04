@@ -1,0 +1,118 @@
+*** SPICE deck for cell nor{lay} from library NOR
+*** Created on Fri Jun 04, 2021 19:21:12
+*** Last revised on Fri Jun 04, 2021 20:06:06
+*** Written on Fri Jun 04, 2021 20:06:11 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+***    P-Active:	areacap=0.9FF/um^2,	edgecap=0.0FF/um,	res=2.5ohms/sq
+***    N-Active:	areacap=0.9FF/um^2,	edgecap=0.0FF/um,	res=3.0ohms/sq
+***    Polysilicon-1:	areacap=0.1467FF/um^2,	edgecap=0.0608FF/um,	res=6.2ohms/sq
+***    Polysilicon-2:	areacap=1.0FF/um^2,	edgecap=0.0FF/um,	res=50.0ohms/sq
+***    Transistor-Poly:	areacap=0.09FF/um^2,	edgecap=0.0FF/um,	res=2.5ohms/sq
+***    Poly-Cut:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=2.2ohms/sq
+***    Active-Cut:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=2.5ohms/sq
+***    Metal-1:	areacap=0.1209FF/um^2,	edgecap=0.1104FF/um,	res=0.078ohms/sq
+***    Via1:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=1.0ohms/sq
+***    Metal-2:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.078ohms/sq
+***    Via2:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=0.9ohms/sq
+***    Metal-3:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.078ohms/sq
+***    Via3:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=0.8ohms/sq
+***    Metal-4:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.078ohms/sq
+***    Via4:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=0.8ohms/sq
+***    Metal-5:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.078ohms/sq
+***    Via5:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=0.8ohms/sq
+***    Metal-6:	areacap=0.0423FF/um^2,	edgecap=0.1273FF/um,	res=0.036ohms/sq
+***    Hi-Res:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=1.0ohms/sq
+
+*** TOP LEVEL CELL: nor{lay}
+Mnmos@0 gnd A#2nmos@0_poly-right out gnd NMOS L=0.6U W=3U AS=7.8P AD=12.15P PS=11.9U PD=16.5U
+Mnmos@1 out B#2nmos@1_poly-right gnd gnd NMOS L=0.6U W=3U AS=12.15P AD=7.8P PS=16.5U PD=11.9U
+Mpmos@0 net@5 A#0pmos@0_poly-left vdd vdd PMOS L=0.6U W=6U AS=27.9P AD=8.1P PS=37.5U PD=8.7U
+Mpmos@1 out B#0pmos@1_poly-left net@5 vdd PMOS L=0.6U W=6U AS=8.1P AD=7.8P PS=8.7U PD=11.9U
+** Extracted Parasitic Capacitors ***
+C0 B 0 0.175fF
+C1 out 0 9.659fF
+C2 A 0 0.184fF
+C3 A#2nmos@0_poly-right 0 0.157fF
+C4 B#2nmos@1_poly-right 0 0.157fF
+C5 B#1pin@6_polysilicon-1 0 0.416fF
+C6 A#1pin@7_polysilicon-1 0 0.425fF
+** Extracted Parasitic Resistors ***
+R0 B#0pmos@1_poly-left B#0pmos@1_poly-left##0 6.2
+R1 B#0pmos@1_poly-left##0 B#1pin@6_polysilicon-1 6.2
+R2 B#1pin@6_polysilicon-1 B#1pin@6_polysilicon-1##0 9.3
+C7 B#1pin@6_polysilicon-1##0 0 0.175fF
+R3 B#1pin@6_polysilicon-1##0 B#1pin@6_polysilicon-1##1 9.3
+C8 B#1pin@6_polysilicon-1##1 0 0.175fF
+R4 B#1pin@6_polysilicon-1##1 B#1pin@6_polysilicon-1##2 9.3
+C9 B#1pin@6_polysilicon-1##2 0 0.175fF
+R5 B#1pin@6_polysilicon-1##2 B#1pin@6_polysilicon-1##3 9.3
+C10 B#1pin@6_polysilicon-1##3 0 0.175fF
+R6 B#1pin@6_polysilicon-1##3 B#1pin@6_polysilicon-1##4 9.3
+C11 B#1pin@6_polysilicon-1##4 0 0.175fF
+R7 B#1pin@6_polysilicon-1##4 B#1pin@6_polysilicon-1##5 9.3
+C12 B#1pin@6_polysilicon-1##5 0 0.175fF
+R8 B#1pin@6_polysilicon-1##5 B#1pin@6_polysilicon-1##6 9.3
+C13 B#1pin@6_polysilicon-1##6 0 0.175fF
+R9 B#1pin@6_polysilicon-1##6 B#1pin@6_polysilicon-1##7 9.3
+C14 B#1pin@6_polysilicon-1##7 0 0.175fF
+R10 B#1pin@6_polysilicon-1##7 B#1pin@6_polysilicon-1##8 9.3
+C15 B#1pin@6_polysilicon-1##8 0 0.175fF
+R11 B#1pin@6_polysilicon-1##8 B#1pin@6_polysilicon-1##9 9.3
+C16 B#1pin@6_polysilicon-1##9 0 0.175fF
+R12 B#1pin@6_polysilicon-1##9 B#1pin@6_polysilicon-1##10 9.3
+C17 B#1pin@6_polysilicon-1##10 0 0.175fF
+R13 B#1pin@6_polysilicon-1##10 B#1pin@6_polysilicon-1##11 9.3
+C18 B#1pin@6_polysilicon-1##11 0 0.175fF
+R14 B#1pin@6_polysilicon-1##11 B 9.3
+R15 A#0pmos@0_poly-left A#0pmos@0_poly-left##0 6.2
+R16 A#0pmos@0_poly-left##0 A#1pin@7_polysilicon-1 6.2
+R17 A#1pin@7_polysilicon-1 A#1pin@7_polysilicon-1##0 9.3
+C19 A#1pin@7_polysilicon-1##0 0 0.157fF
+R18 A#1pin@7_polysilicon-1##0 A#1pin@7_polysilicon-1##1 9.3
+C20 A#1pin@7_polysilicon-1##1 0 0.157fF
+R19 A#1pin@7_polysilicon-1##1 A#1pin@7_polysilicon-1##2 9.3
+C21 A#1pin@7_polysilicon-1##2 0 0.157fF
+R20 A#1pin@7_polysilicon-1##2 A#1pin@7_polysilicon-1##3 9.3
+C22 A#1pin@7_polysilicon-1##3 0 0.157fF
+R21 A#1pin@7_polysilicon-1##3 A#2nmos@0_poly-right 9.3
+R22 A#1pin@7_polysilicon-1 A#1pin@7_polysilicon-1##0 9.817
+C23 A#1pin@7_polysilicon-1##0 0 0.184fF
+R23 A#1pin@7_polysilicon-1##0 A#1pin@7_polysilicon-1##1 9.817
+C24 A#1pin@7_polysilicon-1##1 0 0.184fF
+R24 A#1pin@7_polysilicon-1##1 A#1pin@7_polysilicon-1##2 9.817
+C25 A#1pin@7_polysilicon-1##2 0 0.184fF
+R25 A#1pin@7_polysilicon-1##2 A#1pin@7_polysilicon-1##3 9.817
+C26 A#1pin@7_polysilicon-1##3 0 0.184fF
+R26 A#1pin@7_polysilicon-1##3 A#1pin@7_polysilicon-1##4 9.817
+C27 A#1pin@7_polysilicon-1##4 0 0.184fF
+R27 A#1pin@7_polysilicon-1##4 A#1pin@7_polysilicon-1##5 9.817
+C28 A#1pin@7_polysilicon-1##5 0 0.184fF
+R28 A#1pin@7_polysilicon-1##5 A#1pin@7_polysilicon-1##6 9.817
+C29 A#1pin@7_polysilicon-1##6 0 0.184fF
+R29 A#1pin@7_polysilicon-1##6 A#1pin@7_polysilicon-1##7 9.817
+C30 A#1pin@7_polysilicon-1##7 0 0.184fF
+R30 A#1pin@7_polysilicon-1##7 A#1pin@7_polysilicon-1##8 9.817
+C31 A#1pin@7_polysilicon-1##8 0 0.184fF
+R31 A#1pin@7_polysilicon-1##8 A#1pin@7_polysilicon-1##9 9.817
+C32 A#1pin@7_polysilicon-1##9 0 0.184fF
+R32 A#1pin@7_polysilicon-1##9 A#1pin@7_polysilicon-1##10 9.817
+C33 A#1pin@7_polysilicon-1##10 0 0.184fF
+R33 A#1pin@7_polysilicon-1##10 A 9.817
+R34 B#1pin@6_polysilicon-1 B#1pin@6_polysilicon-1##0 9.3
+C34 B#1pin@6_polysilicon-1##0 0 0.157fF
+R35 B#1pin@6_polysilicon-1##0 B#1pin@6_polysilicon-1##1 9.3
+C35 B#1pin@6_polysilicon-1##1 0 0.157fF
+R36 B#1pin@6_polysilicon-1##1 B#1pin@6_polysilicon-1##2 9.3
+C36 B#1pin@6_polysilicon-1##2 0 0.157fF
+R37 B#1pin@6_polysilicon-1##2 B#1pin@6_polysilicon-1##3 9.3
+C37 B#1pin@6_polysilicon-1##3 0 0.157fF
+R38 B#1pin@6_polysilicon-1##3 B#2nmos@1_poly-right 9.3
+
+* Spice Code nodes in cell cell 'nor{lay}'
+vdd vdd 0 5
+va A 0 PULSE(0 5 0 0.01f 0.01f 10m 20m)
+vb B 0 PULSE(0 5 0 0.001f 0.001f 5m 10m)
+.inc C:\Users\ARIJIT\Documents\Electric\C5_models.txt
+.tran 240m
+.END
